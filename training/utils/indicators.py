@@ -3,7 +3,7 @@ from collections.abc import Callable
 
 
 class ComputeRegistry:
-
+    "Todo"
     _computes = {}
     @classmethod
     def register(cls, indictor_type: str, compute: Callable):
@@ -43,4 +43,3 @@ def compute_bollinger_bands(data: pd.DataFrame, n_points: int) -> pd.DataFrame:
         lsuffix='_momentum'
     )
 
-    
