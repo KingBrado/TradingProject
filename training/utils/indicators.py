@@ -3,7 +3,6 @@ from collections.abc import Callable
 
 
 class ComputeRegistry:
-    "Todo"
     _computes = {}
     @classmethod
     def register(cls, indictor_type: str, compute: Callable):
@@ -27,7 +26,7 @@ def compute_momentum(data: pd.DataFrame, n_points: int) -> pd.DataFrame:
     return data.rolling(n_points).mean().dropna()
 
 
-@register_compute(['rolling_std'])
+@register_compute(['Rolling Std'])
 def compute_rolling_std(data: pd.DataFrame, n_points: int) -> pd.DataFrame:
     return data.rolling(n_points).std().dropna()
 
