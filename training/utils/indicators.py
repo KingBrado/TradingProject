@@ -30,6 +30,15 @@ def compute_momentum(data: pd.DataFrame, n_points: int) -> pd.DataFrame:
 def compute_rolling_std(data: pd.DataFrame, n_points: int) -> pd.DataFrame:
     return data.rolling(n_points).std().dropna()
 
+@register_compute(['Momentum Exponential A'])
+def compute_momentum_exponential(data: pd.DataFrame, npoint: int) -> pd.DataFrame:
+    data['Short_MA'] = data['Close'].ewm(span=npoint).mean().dropna()
+    return data
+
+@register_compute(['Momentum Exponential B'])
+def compute_momentum_exponential(data: pd.DataFrame, npoint: int ) -> pd.DataFrame:
+    data['Long_MA'] = data['Close'].ewm(span=npoint).mean().dropna()
+    return data
 
 @register_compute(['Bollinger Bands'])
 def compute_bollinger_bands(data: pd.DataFrame, n_points: int) -> pd.DataFrame:

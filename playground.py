@@ -22,7 +22,7 @@ fig = go.Figure(data=[
 
 indicators = st.sidebar.multiselect(
     "Technical Indicator",
-    ["Momentum A", "Momentum B", 'Bollinger Bands'],
+    ["Momentum A", "Momentum B", 'Bollinger Bands','Momentum Exponential A','Momentum Exponential B'],
     ["Momentum A"],
 )
 
